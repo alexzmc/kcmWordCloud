@@ -2,14 +2,14 @@
 <template>
   <div class="column" style="width: 800px"> 
     <div class="row items-center justify-evenly bg-blue-grey-10 text-indigo-3">
-      <div class="column col-4">
+      <div class="column col-5">
         <DropdownMenu 
           class="row"
           :options="categories"
           title="Categories"
           @option-selected="categorySelected"
         />
-        <span class="row">Posts Limit</span> 
+        <span class="row mt-1">Posts Limit</span> 
         <q-slider 
           v-model="requestLimit" 
           :markerLabels="rangeLabelArray"
@@ -21,8 +21,8 @@
           color="blue-4"
         ></q-slider>
       </div>
-    <div class="column col-4">
-      <q-btn @click="showDateRanges=true" class="">
+    <div class="column col-5">
+      <q-btn @click="showDateRanges=true" text-color="indigo-2" class="bg-blue-grey-9">
         Date Ranges
       </q-btn>
       <DatePicker 
@@ -31,7 +31,7 @@
         @new-end-date="updateEndDate"
         @close-datepicker="showDateRanges=false"
       />
-      <span>Range of Posts</span> 
+      <span class="row mt-1">Range of Posts</span> 
       <q-range 
         v-model="rangeOfPosts" 
         :min="0" 
@@ -148,7 +148,7 @@ export default defineComponent({
       contents.push(...data.content)
       let hasMore = data.has_more 
       let left = requestLimit.value - limit
-      while (hasMore === true && left > 0) { // pagination
+      while (hasMore === true && left > 0) { 
         options.params.page += 1
         options.params.limit = Math.max(left, limit)
         const response = await axios.request(options)

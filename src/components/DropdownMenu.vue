@@ -7,8 +7,8 @@
   ></div>
   <q-btn 
     @click="showMenu=true"
-    text-color="indigo-3"
-    :style="{ marginLeft: '20px' }"
+    text-color="indigo-2"
+    class="bg-blue-grey-9"
   >{{ title }}</q-btn>
   <div 
     class="menu absolute"
@@ -74,6 +74,7 @@ export default defineComponent({
   overflow-y: scroll;
   max-height: 300px;
   scrollbar-width: thin;
+  box-shadow:  1px 5px rgb(255 255 255 / 20%), 0 2px 2px rgb(255 255 255 / 14%), 0 3px 1px -2px rgb(255 255 255 / 12%);
 }
 .menuOption {
   padding: 5px 10px 5px 10px;

@@ -18,7 +18,10 @@ export const isKeyword = (word: string): boolean => {
     'for',
     'is',
     'on',
-    'are'
+    'are',
+    'that',
+    'this',
+    'from'
   ]
   if (uselessWords.includes(word)) return false
   else return true
